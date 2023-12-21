@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*  */
+
+body,
+html {
+  background: #eff6ff;
+  font-family: "Urbanist", sans-serif;
+}
+.bg-theme {
+  background-color: aliceblue;
+}
+.bg-primary {
+  background-color: #626262;
+}
+.bg-secondary {
+  background-color: #00afef;
+}
+.bg-accent {
+  background-color: #0e364d;
+}
+.text-secondary {
+  color: #00afef;
+}
+.text-accent {
+  color: #0e364d;
+}
+.text-primary {
+  color: #626262;
+}
+.textStyled {
+  /* font-family: "Outfit", sans-serif; */
+  font-family: "Urbanist", sans-serif;
+}
+.custom-container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-links {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: #626262;
+  /* color: #fff; */
+  padding: 1rem 0;
+  margin-left: 2.5rem;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.nav-link:hover {
+  color: #00afef;
+}
+.active {
+  color: #00afef;
+  position: relative;
+}
+.active::after {
+  height: 3px;
+  width: 100%;
+  background-color: #00afef;
+  position: absolute;
+  border-radius: 40px;
+  bottom: 10px;
+  content: "";
+}
+
+.indicator::before {
+  height: 8px;
+}
+
+.artisticText {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  letter-spacing: 2px;
+}
+.no-artisticText {
+  -webkit-text-fill-color: #0e364d;
+  /* -webkit-text-stroke-width: 2px; */
+  letter-spacing: 2px;
+}
