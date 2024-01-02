@@ -25,6 +25,9 @@ html {
 .bg-accent {
   background-color: #0e364d;
 }
+.border-accent {
+  border-color: #0e364d;
+}
 .text-secondary {
   color: #00afef;
 }

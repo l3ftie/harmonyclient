@@ -21,8 +21,8 @@ const homeLinks = [
   },
   {
     id: 5,
-    text: "Contact",
-    path: "contact",
+    text: "Careers",
+    path: "careers",
   },
 ];
 

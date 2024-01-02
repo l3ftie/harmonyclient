@@ -16,7 +16,7 @@ const initialValues = {
   message: "",
 };
 
-export default function ContactForm({ bgImage }) {
+export default function ContactForm({ bgImage, noTitle, noBg }) {
   const [values, setValues] = useState(initialValues);
   const [selectedOption, setSelectedOption] = useState("Question");
 
@@ -69,7 +69,7 @@ export default function ContactForm({ bgImage }) {
         className="flex-1 bg-blue-50  rounded-xl p-6"
         onSubmit={handleSubmit}
       >
-        <div>
+        <div className={`${noTitle ? "hidden" : "block"}`}>
           <h5 className="artisticText text-7xl font-black text-accent">
             Contact Us
           </h5>

@@ -1,6 +1,6 @@
-const FormInput = ({ label, name, type, value, handleChange }) => {
+const FormInput = ({ label, name, type, value, handleChange, short }) => {
   return (
-    <div className={`my-4`}>
+    <div className={`my-4 ${short ? "flex-1" : ""} `}>
       {label && (
         <span className="pl-3 text-sm font-semibold text-accent">{label}</span>
       )}

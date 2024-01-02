@@ -3,6 +3,7 @@ const FormSelectable = ({
   name,
   type,
   value,
+  unstyled,
   handleChange,
   defaultOption,
   selectedOption,
@@ -13,7 +14,11 @@ const FormSelectable = ({
       {label && (
         <span className="pl-3 text-sm font-semibold text-accent">{label}</span>
       )}
-      <div className="bg-white flex gap-1 rounded-full p-1 font-semibold">
+      <div
+        className={`${
+          unstyled ? "gap-5" : "bg-white gap-1 "
+        }   flex  rounded-full p-1 font-semibold`}
+      >
         {options.map((opt) => {
           const { title } = opt;
           return (
@@ -21,7 +26,9 @@ const FormSelectable = ({
               className={`${
                 selectedOption === title
                   ? "bg-accent text-blue-50 p-2 rounded-full"
-                  : "p-2 bg-slate-100 rounded-full"
+                  : `p-2 ${
+                      unstyled ? "bg-white" : "bg-slate-100 "
+                    } rounded-full`
               }`}
               key={title}
             >
