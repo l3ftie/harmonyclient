@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { IoCloseSharp, IoMenu } from "react-icons/io5";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { homeLinks } from "../utils/links";
 import { upperLinks } from "../utils/textContent";
@@ -9,7 +10,10 @@ import UnderLinedBtn from "./UnderLinedBtn";
 const GlobalNavigation = () => {
   // create navigation on scroll update
   const navRef = useRef();
+
+  const navigation = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
+  const [view, setView] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +40,7 @@ const GlobalNavigation = () => {
       }  z-10`}
     >
       {upperLinks ? (
-        <div className={`w-full bg-accent`}>
+        <div className={`w-full bg-accent hidden md:block`}>
           <div className="py-2 text-center container mx-auto">
             {upperLinks.map((item) => {
               const { id, name, link } = item;
@@ -52,11 +56,11 @@ const GlobalNavigation = () => {
         <></>
       )}
       {/* transitional navigation content based on scroll movement */}
-      <div className="hidden sm:hidden lg:flex justify-between md:py-4 container mx-auto">
-        <Link>
+      <div className="flex justify-between p-2 md:py-4 container mx-auto">
+        <Link className="isMobile">
           <Logo small />
         </Link>
-        <div className="flex ">
+        <div className=" hidden md:flex">
           {homeLinks.map((link) => {
             const { id, path, text } = link;
             return (
@@ -72,8 +76,48 @@ const GlobalNavigation = () => {
             );
           })}
         </div>
-        <div>
-          <UnderLinedBtn shadowed title="Make An Appointment" />
+        <div className="hidden md:block">
+          <UnderLinedBtn
+            shadowed
+            title="Make An Appointment"
+            action={() => navigation("appointments")}
+          />
+        </div>
+        {/* mobile */}
+        <div className="sm:hidden items-center justify-center flex">
+          <div onClick={() => setView(true)}>
+            <IoMenu size={34} />
+          </div>
+        </div>
+        {/* div for navLinks */}
+        <div
+          className={`bg-blue-50 fixed top-0 bottom-0 right-0 left-0 ${
+            view ? "" : "-translate-x-full"
+          } transition-all sm:hidden`}
+        >
+          <div className="grid justify-end mt-5 mr-3">
+            <button type="button" onClick={() => setView(false)}>
+              <IoCloseSharp size={34} />
+            </button>
+          </div>
+          <div className="flex flex-col items-center justify-center h-full gap-4">
+            {homeLinks.map((link) => {
+              const { id, path, text } = link;
+              return (
+                <div
+                  key={id}
+                  // to={path}
+                  onClick={() => {
+                    navigation(path);
+                    setView(false);
+                  }}
+                  className="text-2xl"
+                >
+                  {text}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -88,8 +132,18 @@ const Wrapper = styled.div`
   gap: 10;
 
   @media (max-width: 992px) {
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
     display: flex;
     flex-direction: column;
+
+    .isMobile {
+      height: 80px;
+      width: 100px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 `;

@@ -3,11 +3,13 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
 import heroBg from "../assets/images/Buffer_Seniors_BG_2.jpg";
 
+import { useNavigate } from "react-router-dom";
 import roundedImg from "../assets/images/Slider_Circle_2.png";
 import { sliderData } from "../utils/textContent";
 import UnderLinedBtn from "./UnderLinedBtn";
 
 const Slider = () => {
+  const navigation = useNavigate();
   const [slideIndex, setSlideIndex] = useState(0);
 
   const handleClick = (direction) => {
@@ -76,6 +78,7 @@ const Slider = () => {
                 {/*  */}
 
                 <UnderLinedBtn
+                  action={() => navigation("appointments")}
                   accentColor="#fee830"
                   shadowed
                   title="Get in touch today!"

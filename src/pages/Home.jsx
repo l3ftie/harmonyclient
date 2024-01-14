@@ -13,11 +13,13 @@ import image3 from "../assets/images/image3.jpg";
 import Slider from "../components/Slider";
 import UnderLinedBtn from "../components/UnderLinedBtn";
 
+import { useNavigate } from "react-router-dom";
 import ContactForm from "../components/ContactForm";
 import QuestionGroup from "../components/QuestionGroup";
 import { fqas, points } from "../utils/textContent";
 
 const Home = () => {
+  const navigation = useNavigate();
   return (
     <Wrapper>
       <Slider />
@@ -63,6 +65,7 @@ const Home = () => {
               </p>
               <div className="flex justify-center mt-5">
                 <UnderLinedBtn
+                  action={() => navigation("services")}
                   shadowed
                   title="Read more"
                   accentColor="#72e98c"
@@ -97,6 +100,7 @@ const Home = () => {
               </p>
               <div className="flex justify-center mt-5">
                 <UnderLinedBtn
+                  action={() => navigation("services")}
                   shadowed
                   title="Read more"
                   accentColor="#0085fe"
@@ -130,6 +134,7 @@ const Home = () => {
               </p>
               <div className="flex justify-center mt-5">
                 <UnderLinedBtn
+                  action={() => navigation("services")}
                   shadowed
                   title="Read more"
                   accentColor="#fee830"
@@ -140,7 +145,7 @@ const Home = () => {
         </div>
       </section>
       {/*  */}
-      <section className=" md:container md:mx-auto flex pb-16">
+      <section className=" md:container md:mx-auto md:flex pb-16">
         <div
           className="flex-1  bg-no-repeat bg-right-top"
           style={{
