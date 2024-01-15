@@ -30,19 +30,19 @@ const Slider = () => {
           <Slide key={slide.id}>
             <ImgContainer></ImgContainer>
             <InfoContainer>
-              <Title className="textStyled text-accent md:text-4xl tracking-wide font-bold">
+              <Title className="textStyled text-accent px-4 md:px-0 md:text-4xl tracking-wide font-bold">
                 {slide.title}
               </Title>
-              <div className="md:w-2/3">
+              <div className="w-full md:w-2/3">
                 <Desc>
                   {slide.desc1}
                   <span className="block">{slide.desc2}</span>
                 </Desc>
 
                 {/*  */}
-                <div className="flex lg:gap-8 mb-8">
+                <div className="flex justify-center gap-4 md:justify-start lg:gap-8 mb-8">
                   <div
-                    className="bg-cover w-32 h-32 flex flex-col items-center justify-center p-3"
+                    className="bg-cover w-28 h-28 md:w-32 md:h-32 flex flex-col items-center justify-center p-3"
                     style={{
                       backgroundImage: `url(${roundedImg})`,
                     }}
@@ -53,7 +53,7 @@ const Slider = () => {
                     <p className="text-blue-50 textStyled">Clients</p>
                   </div>
                   <div
-                    className="bg-cover w-32 h-32 flex flex-col items-center justify-center p-3 rotate-12"
+                    className="bg-cover w-28 h-28 md:w-32 md:h-32 flex flex-col items-center justify-center p-3 rotate-12"
                     style={{
                       backgroundImage: `url(${roundedImg})`,
                     }}
@@ -64,7 +64,7 @@ const Slider = () => {
                     <p className="text-blue-50 textStyled">Caregivers</p>
                   </div>
                   <div
-                    className="bg-cover w-32 h-32 flex flex-col items-center justify-center p-3"
+                    className="bg-cover w-28 h-28 md:w-32 md:h-32 flex flex-col items-center justify-center p-3"
                     style={{
                       backgroundImage: `url(${roundedImg})`,
                     }}
@@ -77,12 +77,14 @@ const Slider = () => {
                 </div>
                 {/*  */}
 
-                <UnderLinedBtn
-                  action={() => navigation("appointments")}
-                  accentColor="#fee830"
-                  shadowed
-                  title="Get in touch today!"
-                />
+                <div className="p-4 md:p-0">
+                  <UnderLinedBtn
+                    action={() => navigation("appointments")}
+                    accentColor="#fee830"
+                    shadowed
+                    title="Get in touch today!"
+                  />
+                </div>
               </div>
             </InfoContainer>
           </Slide>
@@ -111,6 +113,10 @@ const Slide = styled.div`
 const ImgContainer = styled.div`
   height: 100%;
   flex: 1;
+
+  @media (max-width: 992px) {
+    flex: 0;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -120,6 +126,10 @@ const InfoContainer = styled.div`
   height: 100vh;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 992px) {
+    padding: 0;
+  }
 `;
 
 const Container = styled.div`
@@ -145,6 +155,9 @@ const Desc = styled.p`
     color: #0e364d;
     margin-top: 5px;
     font-size: 0.9rem;
+  }
+  @media (max-width: 992px) {
+    padding: 0 15px;
   }
 `;
 
