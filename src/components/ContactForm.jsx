@@ -40,30 +40,11 @@ export default function ContactForm({ bgImage, noTitle, noBg }) {
           bgImage ? bgImage : ""
         })`,
       }}
-      className=" p-4 border-4 border-white flex gap-7 bg-contain rounded-3xl"
+      className=" p-4 border-4 border-white md:flex gap-7 bg-contain rounded-3xl"
     >
-      <div className="flex-1 py-7">
+      <div className="md:flex-1 py-7">
         <h5></h5>
-        <div className="my-6 lg:w-5/6 hidden">
-          <p className="text-blue-50 text-xl">
-            We appreciate your interest in Harmony Health Home. Our team is
-            happy to answer questions or assist you in any way we can. Reach out
-            and we’ll be in touch as soon as possible. You can also call us at
-            +2630000000
-          </p>
-        </div>
-        <p className="text-blue-50 hidden mb-6">Follow us on:</p>
-        <div className="socialMedia  hidden gap-6">
-          <button>
-            <FaFacebookF size={34} color="#dbeafe" />
-          </button>
-          <button>
-            <FaLinkedinIn size={34} color="#dbeafe" />
-          </button>
-          <button>
-            <RiTwitterXFill size={34} color="#dbeafe" />
-          </button>
-        </div>
+        <div className="my-6 lg:w-5/6 hidden"></div>
       </div>
       <form
         className="flex-1 bg-blue-50  rounded-xl p-6"

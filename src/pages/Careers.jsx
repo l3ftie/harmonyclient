@@ -47,7 +47,7 @@ const Careers = () => {
       <section className="">
         <ImageHeader bgImage={healthCareImg} height="200px" />
       </section>
-      <section className="container mx-auto md:flex md:gap-5 my-10 ">
+      <section className=" p-3 md:p-0 md:container mx-auto md:flex md:gap-5 my-10 ">
         <div className="flex-1">
           <h4 className="text-5xl textStyled font-bold text-accent">
             Current Job Listings
@@ -68,7 +68,10 @@ const Careers = () => {
             JobListing.map((job) => {
               const { id, title, desc, location } = job;
               return (
-                <div key={id} className=" border-b border-gray-200 md:py-4 ">
+                <div
+                  key={id}
+                  className=" border-b border-gray-200 py-6 md:py-4 "
+                >
                   <h4 className="text-secondary cursor-pointer text-xl font-bold hover:text-orange-400 transition-all inline-block">
                     {title}
                   </h4>
@@ -94,7 +97,7 @@ const Careers = () => {
             </section>
           )}
         </div>
-        <div className="md:w-96 bg-accent rounded-3xl p-3">
+        <div className="mt-8 md:mt-0 md:w-96 bg-accent rounded-3xl p-3">
           <SignUp />
         </div>
       </section>

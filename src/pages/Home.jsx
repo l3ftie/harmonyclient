@@ -145,7 +145,7 @@ const Home = () => {
         </div>
       </section>
       {/*  */}
-      <section className=" md:container md:mx-auto md:flex pb-16">
+      <section className="p-2 md:p-0 md:container md:mx-auto md:flex pb-16">
         <div
           className="flex-1  bg-no-repeat bg-right-top"
           style={{
@@ -210,7 +210,7 @@ const Home = () => {
         </>
         {/* separator */}
         <div className="pt-24">
-          <div className="container mx-auto">
+          <div className="md:container mx-auto">
             <ContactForm bgImage={bgImage} />
           </div>
         </div>

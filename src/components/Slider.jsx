@@ -178,6 +178,9 @@ const Arrow = styled.div`
   cursor: pointer;
   opacity: 0.5;
   z-index: 2;
+  @media (max-width: 992px) {
+    background-color: #fff7f710;
+  }
 `;
 
 export default Slider;

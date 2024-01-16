@@ -8,7 +8,7 @@ const ImageHeader = ({ title, subTitle, bgImage, height }) => {
           <></>
         ) : (
           <>
-            <h4 className="md:text-6xl font-black textStyled text-primary">
+            <h4 className="text-3xl md:text-6xl font-black textStyled text-primary">
               {title}
             </h4>
             <p className=" text-xl text-accent">{subTitle}</p>
@@ -27,6 +27,8 @@ const Container = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  @media (max-width: 992px) {
+  }
 `;
 
 export default ImageHeader;

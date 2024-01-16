@@ -42,18 +42,18 @@ const Appointments = () => {
         />
         {/*  */}
       </section>
-      <section className="my-24 h-screen">
-        <h4 className="text-xl md:text-7xl font-black artisticText textStyled text-accent text-center  ">
+      <section className="md:my-24">
+        <h4 className="text-3xl md:text-7xl font-black artisticText textStyled text-accent text-center  ">
           Make An Appointment <span className="no-artisticText">Today... </span>
         </h4>
         {/* form below */}
-        <form className="flex custom-container mx-auto my-24 md:gap-7">
+        <form className="flex flex-col md:flex-row custom-container mx-auto my-24 p-3 md:p-0 md:gap-7">
           <div className="formInput flex-1 ">
-            <div className="flex gap-5">
+            <div className="flex flex-col md:flex-row md:gap-5">
               <FormInput label="Name" short />
               <FormInput label="Surname" short />
             </div>
-            <div className="flex gap-5">
+            <div className="flex flex-col md:flex-row md:gap-5">
               <FormInput label="Email" short />
               <FormInput label="Phone" short />
             </div>
@@ -89,7 +89,8 @@ const Appointments = () => {
             />
           </div>
           {/* form data */}
-          <div className="formContact">
+          <div className="bg-gray-300 h-[1px] md:hidden mt-8"></div>
+          <div className="formContact mt-8 md:mt-0">
             <h4 className="textStyled font-black text-xl md:mb-4">
               GET IN TOUCH
             </h4>

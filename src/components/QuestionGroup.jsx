@@ -13,7 +13,7 @@ const QuestionGroup = ({ data }) => {
   };
 
   return (
-    <div className="bg-blue-50 md:my-10 p-6">
+    <div className="bg-blue-50 md:my-10 md:p-6">
       {data.map((item) => {
         const { id, title, content } = item;
         return (

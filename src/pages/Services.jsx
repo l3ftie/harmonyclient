@@ -38,10 +38,10 @@ const Services = () => {
         {/*  */}
       </section>
       <section>
-        <div className="container mx-auto md:flex">
+        <div className="p-4 md:p-0 md:container mx-auto md:flex">
           <div className="flex-1">
             <div className="">
-              <h4 className="text-xl md:text-7xl font-black textStyled text-accent ">
+              <h4 className="text-center md:text-left text-2xl md:text-7xl font-black textStyled text-accent ">
                 Everything Harmony{" "}
                 <span className="bg-secondary p-3 rounded-xl inline-block my-3">
                   Offers{" "}
@@ -55,15 +55,15 @@ const Services = () => {
             </div>
           </div>
           <div className="flex-1">
-            <div className="w-96 h-96  rounded-3xl relative">
+            <div className="md:w-96 md:h-96  rounded-3xl relative">
               <img
                 src={gifyHero}
-                className="absolute rounded-3xl top-0"
+                className="md:absolute rounded-3xl top-0 "
                 style={{ zIndex: 1 }}
               />
               <div
                 style={{ backgroundColor: `${hex}` }}
-                className="w-96 h-96  absolute -bottom-3 rounded-3xl -right-3"
+                className="md:w-96 md:h-96  md:absolute -bottom-3 rounded-3xl -right-3"
               ></div>
             </div>
           </div>

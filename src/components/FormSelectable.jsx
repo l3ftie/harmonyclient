@@ -17,7 +17,7 @@ const FormSelectable = ({
       <div
         className={`${
           unstyled ? "gap-5" : "bg-white gap-1 "
-        }   flex  rounded-full p-1 font-semibold`}
+        }   flex flex-wrap  rounded-full p-1 font-semibold`}
       >
         {options.map((opt) => {
           const { title } = opt;

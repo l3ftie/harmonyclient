@@ -8,7 +8,7 @@ import ImageHeader from "../components/ImageHeader";
 const About = () => {
   return (
     <Wrapper>
-      <section className="pb-20">
+      <section className="md:pb-20">
         <ImageHeader
           title="About Us"
           subTitle="A little history about us"
@@ -17,7 +17,7 @@ const About = () => {
         {/*  */}
         <div className="container mx-auto flex flex-col md:flex-row">
           <div className="textContainer flex-1 flex flex-col justify-center">
-            <h4 className="text-xl md:text-5xl font-black textStyled text-accent">
+            <h4 className="text-2xl text-center md:text-left md:text-5xl font-black textStyled text-accent">
               At Harmony Health Home
             </h4>
             <div className="p-4 md:p-0 md:w-2/3 my-3">
@@ -29,19 +29,19 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="flex-1 relative">
+          <div className="flex-1 relative p-3 md:p-0">
             <img
               src={aboutImage}
               alt="about harmony health home"
-              className="rounded-lg w-2/3 shadow-2xl"
+              className="rounded-lg md:w-2/3 shadow-2xl"
             />
           </div>
         </div>
       </section>
       {/*  */}
-      <section className="py-20">
-        <div className="container mx-auto flex  flex-row-reverse md:flex-row">
-          <div className="flex-1 P-6 md:pr-24">
+      <section className="md:py-20 p-4 md:p-0">
+        <div className="container mx-auto flex flex-col  md:flex-row">
+          <div className="md:flex-1 P-6 md:pr-24">
             <p className="pt-16 text-secondary text-3xl font-bold">
               We approach our work with empathy, kindness, and understanding,
               recognizing the unique needs of each individual.
@@ -99,7 +99,7 @@ const About = () => {
           />
         </div>
         <div className="flex-1 flex items-center justify-center">
-          <div className="md:w-2/4">
+          <div className="md:w-2/4 p-4 md:p-0">
             <h4 className="text-accent text-3xl font-black md:text-6xl mb-4">
               Our Commitment
             </h4>
@@ -121,5 +121,8 @@ const Wrapper = styled.div`
   .fullWidthContent {
     height: 50vh;
     display: flex;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
   }
 `;
